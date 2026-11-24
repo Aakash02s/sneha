@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#faf6f1">
+<title>For Sneha ♡ | A Birthday Surprise</title>
+<style>
+:root{--paper:#faf6f1;--cream:#fffdf9;--ink:#302925;--muted:#877a70;--rose:#b9827c;--rose2:#ead2cc;--gold:#c6a875;--line:#eadfd7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;min-height:100vh}
+button{font:inherit}
+button:focus-visible{outline:2px solid var(--rose);outline-offset:4px}
+#ambient{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.glow{position:absolute;border-radius:50%;filter:blur(1px);opacity:.45;background:radial-gradient(circle,#f0dcd4 0,transparent 70%);width:340px;height:340px}
+.g1{top:-180px;left:-140px}.g2{right:-180px;bottom:-170px;width:420px;height:420px}
+main{position:relative;z-index:1;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:68px 18px 34px}
+.topbar{position:fixed;z-index:5;top:16px;left:0;right:0;display:flex;justify-content:center;gap:10px;align-items:center}
+.pill{border:1px solid var(--line);background:rgba(255,253,249,.82);backdrop-filter:blur(8px);border-radius:30px;padding:9px 14px;color:var(--muted);font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.sound{cursor:pointer;color:#795b55}
+.card{width:min(100%,650px);min-height:530px;background:rgba(255,253,249,.88);border:1px solid var(--line);box-shadow:0 28px 90px rgba(70,48,37,.08);padding:clamp(28px,7vw,64px) clamp(20px,7vw,62px);text-align:center;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.card:before{content:"";position:absolute;inset:10px;border:1px solid rgba(234,223,215,.7);pointer-events:none}
+.screen{display:none;animation:appear .7s ease both;position:relative;z-index:1}.screen.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.kicker{font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--rose)}
+h1{font-size:clamp(40px,9vw,67px);font-weight:400;line-height:1.08;letter-spacing:-.045em;margin:16px 0}
+h1 em{font-weight:400;color:var(--rose)}
+h2{font-size:clamp(29px,7vw,42px);font-weight:400;line-height:1.2;margin:12px 0 16px}
+.copy{font-size:17px;line-height:1.85;color:var(--muted);max-width:450px;margin:0 auto}
+.rule{width:48px;height:1px;background:var(--gold);margin:25px auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:28px;padding:14px 23px;border:1px solid #b98c86;background:transparent;color:#76534f;font:10px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.25s}
+.btn:hover{background:#b98c86;color:white;transform:translateY(-2px)}
+.btn.secondary{border-color:var(--line);color:var(--muted);margin-left:7px}
+.ornament{font-size:29px;color:var(--rose);margin:16px 0}
+.name{color:var(--rose);font-style:italic}
+.cake-wrap{margin:24px auto 6px;width:190px;height:165px;position:relative}
+.plate{position:absolute;bottom:12px;left:10px;width:170px;height:17px;border-radius:50%;background:#eadbd2;box-shadow:0 7px 0 #e2d0c6}
+.cake{position:absolute;bottom:27px;left:34px;width:122px;height:73px;border-radius:12px 12px 9px 9px;background:linear-gradient(#f3dcd4 0 20%,#fff1e8 20% 68%,#d9a49a 68%);box-shadow:inset 0 -5px rgba(157,102,91,.12)}
+.cake:before{content:"";position:absolute;top:-8px;left:-5px;width:132px;height:19px;border-radius:50%;background:#fff0e7;border-bottom:3px solid #e6c2b8}
+.candle{position:absolute;bottom:99px;left:91px;width:8px;height:35px;background:repeating-linear-gradient(135deg,#fff 0 5px,#dca49a 5px 9px);border-radius:3px}
+.flame{position:absolute;top:-17px;left:-3px;width:14px;height:19px;border-radius:60% 40% 60% 40%;background:#e9b86d;transform:rotate(45deg);box-shadow:0 0 18px #edc17d;animation:flicker .7s infinite alternate}
+@keyframes flicker{to{transform:rotate(38deg) scale(.86);opacity:.75}}
+.cake-wrap.blown .flame{display:none}
+.tapnote{font:10px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#a18e82}
+.envelope{width:170px;height:112px;margin:30px auto 8px;position:relative;cursor:pointer;filter:drop-shadow(0 10px 12px rgba(80,50,40,.1));transition:transform .3s}
+.envelope:hover{transform:translateY(-5px)}
+.env-body{position:absolute;inset:0;background:#ead1ca;border-radius:5px}
+.env-flap{position:absolute;top:0;left:0;border-left:85px solid transparent;border-right:85px solid transparent;border-top:62px solid #d7aaa1;transform-origin:top;transition:transform .7s;z-index:2}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+.env-heart{position:absolute;z-index:3;top:44px;left:73px;color:#fff9f4;font-size:24px}
+.letter{background:#fffaf5;border:1px solid var(--line);padding:22px 20px;margin:18px auto 0;max-width:440px;text-align:left;color:#74655c;font-size:16px;line-height:1.9;box-shadow:0 10px 30px rgba(70,48,37,.05)}
+.letter .sign{display:block;text-align:right;color:var(--rose);font-style:italic;font-size:20px;margin-top:12px}
+.reply-box{max-width:440px;margin:0 auto}
+.reply-box textarea{display:block;width:100%;resize:vertical;min-height:88px;margin:18px auto 0;padding:14px 15px;border:1px solid var(--line);background:#fffaf6;color:var(--ink);font:15px/1.6 Georgia,serif;border-radius:2px;outline:none}
+.reply-box textarea:focus{border-color:var(--rose)}
+.reply-box textarea::placeholder{color:#b2a49a}
+.flower-stage{height:205px;display:grid;place-items:center;margin:10px auto}
+.flower-svg{width:190px;height:190px;overflow:visible}
+.cartoon-card{width:min(100%,360px);margin:24px auto 8px;padding:10px 10px 16px;background:#fffdfa;border:1px solid #eadfd7;box-shadow:0 16px 38px rgba(70,48,37,.10);transform:rotate(-1.2deg)}
+.cartoon-card img{display:block;width:100%;height:auto;max-height:430px;object-fit:cover}
+.cartoon-caption{font:italic 17px Georgia,serif;color:var(--rose);margin:12px 0 0}
+.portrait-screen{max-width:100%}
+.portrait-screen .cartoon-card{width:min(100%,390px);margin:20px auto 8px}
+.portrait-screen .cartoon-card img{max-height:min(52vh,510px);object-fit:contain}
+.gallery-nav{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:8px}
+.gallery-nav .btn{margin-top:12px;min-width:130px}
+.gallery-count{width:100%;font:10px Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.journey-count{font:9px Arial,sans-serif;letter-spacing:.12em;color:var(--muted);margin-top:7px}
+
+.petals{transform-origin:100px 100px;animation:bloom 2.5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes bloom{from{transform:scale(.08) rotate(-30deg);opacity:.2}to{transform:scale(1) rotate(0);opacity:1}}
+.starfield{height:190px;max-width:390px;margin:10px auto;position:relative;background:radial-gradient(ellipse,#f6eae4 0,transparent 72%);border-radius:50%}
+.star{position:absolute;border:0;background:none;color:#c39a75;font-size:22px;cursor:pointer;animation:twinkle 1.8s infinite alternate;padding:8px}
+.star:nth-child(1){top:20%;left:17%}.star:nth-child(2){top:52%;left:43%;animation-delay:.5s}.star:nth-child(3){top:18%;right:16%;animation-delay:1s}.star:nth-child(4){bottom:12%;right:25%;animation-delay:.8s}.star:nth-child(5){bottom:15%;left:19%;animation-delay:.3s}
+@keyframes twinkle{to{opacity:.45;transform:scale(.8)}}
+.compliment{min-height:48px;color:#8b6d63;font-style:italic;font-size:17px;line-height:1.6;margin:4px auto 0;max-width:400px}
+.final-heart{font-size:42px;color:var(--rose);animation:heartbeat 1.4s infinite}
+@keyframes heartbeat{50%{transform:scale(1.14)}}
+.progress{display:flex;justify-content:center;gap:7px;margin-top:26px}
+.dot{width:5px;height:5px;border-radius:50%;background:#e6d8cf}.dot.on{background:var(--rose)}
+.footer{font:9px Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:#b2a49a;margin-top:28px;position:relative;z-index:1}
+.confetti{position:fixed;top:-20px;z-index:8;pointer-events:none;animation:fall linear forwards;color:#c48e86}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+@media(max-width:430px){.card{min-height:550px;padding:35px 20px}.copy{font-size:16px}.topbar{top:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="ambient"><div class="glow g1"></div><div class="glow g2"></div></div>
+<div class="topbar">
+  <span class="pill">A little birthday journey</span>
+  <button class="pill sound" id="musicBtn" type="button" aria-pressed="false">♫ Play music</button>
+</div>
+<main>
+<section class="card" aria-live="polite">
+  <div class="screen active" id="s0">
+    <div class="kicker">A little something, made just for you</div>
+    <div class="ornament">✿</div>
+    <h1>For <em>Sneha</em></h1>
+    <p class="copy">Some days deserve a little extra magic.<br>And today is one of them.</p>
+    <div class="rule"></div>
+    <p class="copy" style="font-size:14px">I made a small surprise. Take a moment and enjoy it.</p>
+    <button class="btn" onclick="startJourney()">Open your surprise <span>↗</span></button>
+  </div>
+
+  <div class="screen" id="s1">
+    <div class="kicker">A day worth celebrating</div>
+    <div class="ornament">✧</div>
+    <h1>Happy Birthday,<br><em>Sneha</em></h1>
+    <p class="copy">May your day be as lovely as the little moments that make you smile.</p>
+    <div class="cake-wrap" id="cake">
+      <div class="plate"></div><div class="cake"></div><div class="candle"><div class="flame"></div></div>
+    </div>
+    <p class="tapnote">Make a wish, then tap the candle</p>
+    <button class="btn" onclick="blow()">Make a wish ✧</button>
+  </div>
+
+  <div class="screen" id="s2">
+    <div class="kicker">A note, just for you</div>
+    <h2>A little letter <em class="name">♡</em></h2>
+    <p class="copy">There's something waiting inside.</p>
+    <div class="envelope" id="envelope" onclick="openLetter()" role="button" tabindex="0" aria-label="Open the letter">
+      <div class="env-body"></div><div class="env-flap"></div><div class="env-heart">♡</div>
+    </div>
+    <p class="tapnote" id="envHint">Tap the envelope to open</p>
+    <div class="letter" id="letter" hidden>
+      Sneha,<br>
+      I hope this new chapter brings you reasons to laugh, people who make you feel appreciated, and opportunities that make you proud. Keep being your wonderful self. The world feels a little brighter with people like you in it.
+      <span class="sign">Warmest wishes ♡</span>
+    </div>
+    <button class="btn" id="letterNext" onclick="go(3)" hidden>There's more <span>→</span></button>
+  </div>
+
+  <div class="screen" id="s3">
+    <div class="kicker">A wish for your year ahead</div>
+    <h2>May you always <em class="name">bloom</em></h2>
+    <p class="copy">A little reminder that beautiful things take their own time.</p>
+    <div class="flower-stage">
+      <svg class="flower-svg" viewBox="0 0 200 200" role="img" aria-label="A pink flower blooming">
+        <path d="M100 105 Q98 145 105 184" fill="none" stroke="#8eaa88" stroke-width="4" stroke-linecap="round"/>
+        <path d="M103 158 Q70 135 58 151 Q74 174 103 163" fill="#a8bd9d"/>
+        <g class="petals" fill="#d9aaa3" stroke="#c78e87" stroke-width="1.2">
+          <ellipse cx="100" cy="65" rx="18" ry="39"/><ellipse cx="100" cy="65" rx="18" ry="39" transform="rotate(45 100 100)"/>
+          <ellipse cx="100" cy="65" rx="18" ry="39" transform="rotate(90 100 100)"/><ellipse cx="100" cy="65" rx="18" ry="39" transform="rotate(135 100 100)"/>
+        </g>
+        <circle cx="100" cy="100" r="13" fill="#d6b36f"/>
+      </svg>
+    </div>
+    <p class="copy">May your days be filled with growth, gentle surprises, and moments that feel like sunshine.</p>
+    <button class="btn" onclick="go(4)">Meet your first portrait ✧</button>
+  </div>
+
+  <div class="screen portrait-screen" id="s4">
+    <div class="kicker">A little star of this day ✨</div><h2>Your lovely <em class="name">smile</em></h2>
+    <div class="cartoon-card"><img src="sneha_cartoon_portrait.png" alt="Cartoon-style illustration of Sneha in a red outfit"><p class="cartoon-caption">A smile that makes ordinary moments brighter ♡</p></div>
+    <div class="gallery-nav"><button class="btn secondary" onclick="go(3)">← Previous</button><button class="btn" onclick="go(5)">Next portrait →</button><span class="gallery-count">Portrait 1 of 3</span></div>
+  </div>
+
+  <div class="screen portrait-screen" id="s5">
+    <div class="kicker">A little star of this day ✨</div><h2>Another lovely <em class="name">glimpse</em></h2>
+    <div class="cartoon-card"><img src="sneha_cartoon_portrait_2.png" alt="Cartoon-style illustration of Sneha in a yellow top"><p class="cartoon-caption">Another little glimpse of your lovely self ✨</p></div>
+    <div class="gallery-nav"><button class="btn secondary" onclick="go(4)">← Previous</button><button class="btn" onclick="go(6)">Next portrait →</button><span class="gallery-count">Portrait 2 of 3</span></div>
+  </div>
+
+  <div class="screen portrait-screen" id="s6">
+    <div class="kicker">A little star of this day ✨</div><h2>A little more <em class="name">sparkle</em></h2>
+    <div class="cartoon-card"><img src="sneha_cartoon_portrait_3.png" alt="Cartoon-style illustration of Sneha in a red and white patterned top"><p class="cartoon-caption">A little more of your sparkle ♡</p></div>
+    <div class="gallery-nav"><button class="btn secondary" onclick="go(5)">← Previous</button><button class="btn" onclick="go(7)">Follow the stars ✧</button><span class="gallery-count">Portrait 3 of 3</span></div>
+  </div>
+
+  <div class="screen" id="s7">
+    <div class="kicker">A few little reminders</div>
+    <h2>Pick a <em class="name">star</em></h2>
+    <p class="copy">Each one has a tiny birthday wish for you.</p>
+    <div class="starfield">
+      <button class="star" onclick="wish(0)" aria-label="Star one">✦</button>
+      <button class="star" onclick="wish(1)" aria-label="Star two">✧</button>
+      <button class="star" onclick="wish(2)" aria-label="Star three">✦</button>
+      <button class="star" onclick="wish(3)" aria-label="Star four">✧</button>
+      <button class="star" onclick="wish(4)" aria-label="Star five">✦</button>
+    </div>
+    <p class="compliment" id="compliment">Your little wish will appear here.</p>
+    <button class="btn" onclick="go(8)">One last thing <span>♡</span></button>
+  </div>
+
+  <div class="screen" id="s8">
+    <div class="kicker">And before you go…</div>
+    <div class="final-heart">♡</div>
+    <h1>Keep <em>shining</em>, Sneha.</h1>
+    <p class="copy">Wishing you a birthday full of happiness and a year that surprises you in the loveliest ways.</p>
+    <div class="rule"></div>
+    <p class="copy" style="font-style:italic;color:#9a746d">Some people make ordinary moments feel a little more special, just by being themselves.</p>
+    <p class="copy" style="margin-top:18px">Have the loveliest birthday. ♡</p>
+    <button class="btn" onclick="celebrate()">A little birthday sparkle ✧</button>
+    <button class="btn secondary" onclick="go(9)">There's one more thing… ♡</button>
+    <button class="btn secondary" onclick="go(0)">Start again</button>
+  </div>
+
+  <div class="screen" id="s9">
+    <div class="kicker">A little something from my heart</div>
+    <h2>One last <em class="name">little secret</em></h2>
+    <p class="copy">Before you go, there's something I've wanted to say.</p>
+    <div class="envelope" id="finalEnvelope" onclick="openFinalLetter()" role="button" tabindex="0" aria-label="Open the personal letter">
+      <div class="env-body"></div><div class="env-flap"></div><div class="env-heart">♡</div>
+    </div>
+    <p class="tapnote" id="finalEnvHint">Tap to open your letter</p>
+    <div class="letter" id="finalLetter" hidden>
+      Dear Sneha,<br><br>
+      I don't know if you've ever noticed, but there's something about you that makes you special. Your smile and the little things about you have a way of making ordinary moments feel a little brighter.<br><br>
+      I just wanted you to know that I like you, in my own little way. No expectations, no pressure — I simply wanted to share that with you.<br><br>
+      I hope this brings a little smile to your day.
+      <span class="sign">With warm wishes ♡</span>
+    </div>
+    <div class="reply-box" id="replyBox">
+      <div class="rule"></div>
+      <p class="kicker">A little note back</p>
+      <h2 style="font-size:clamp(24px,6vw,32px)">Would you like to say something?</h2>
+      <p class="copy" style="font-size:15px">If this made you smile and you'd like to reply, you can leave me a little message here. No pressure at all. ♡</p>
+      <textarea id="replyMessage" rows="3" maxlength="1000" placeholder="Type your message here…" aria-label="Your WhatsApp reply"></textarea>
+      <button class="btn" type="button" onclick="sendWhatsApp()">Send on WhatsApp ♡</button>
+      <p class="tapnote" style="margin-top:12px">Your message opens in WhatsApp for you to review and send.</p>
+    </div>
+    <button class="btn secondary" id="backToWishes" onclick="go(1)">Back to your birthday wishes ♡</button>
+  </div>
+
+  <div class="progress" id="progress" aria-label="Journey progress"></div>
+  <div class="journey-count" id="journeyCount" aria-live="polite"></div>
+  <div class="footer">Made with a little extra thought · ❤️ By Akash</div>
+</section>
+</main>
+<script>
+let current=0, audioCtx=null, musicOn=false, musicTimer=null, noteIndex=0;
+const notes=[261.63,329.63,392.00,329.63,293.66,349.23,440.00,392.00,261.63,329.63,392.00,523.25,440.00,392.00,329.63,293.66];
+function renderProgress(){document.getElementById('progress').innerHTML=Array.from({length:10},(_,i)=>`<span class="dot ${i===current?'on':''}"></span>`).join('');document.getElementById('journeyCount').textContent=`Screen ${current+1} of 10`}
+function go(n){document.getElementById('s'+current).classList.remove('active');current=n;document.getElementById('s'+current).classList.add('active');renderProgress();if(n===8)confetti(28)}
+function startJourney(){startMusic();go(1)}
+renderProgress();
+function blow(){document.getElementById('cake').classList.add('blown');confetti(18);setTimeout(()=>go(2),900)}
+function openLetter(){const e=document.getElementById('envelope');e.classList.add('open');document.getElementById('letter').hidden=false;document.getElementById('envHint').textContent='A little note for you';document.getElementById('letterNext').hidden=false}
+function openFinalLetter(){const e=document.getElementById('finalEnvelope');e.classList.add('open');document.getElementById('finalLetter').hidden=false;document.getElementById('finalEnvHint').textContent='A little note, just for you';confetti(14)}
+document.getElementById('envelope').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter()}});
+document.getElementById('finalEnvelope').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openFinalLetter()}});
+const wishes=['May you find joy in the little things, every single day.','May the year ahead bring kind people and beautiful opportunities.','May you always have a reason to smile and something to look forward to.','May your dreams feel closer with every step you take.','And may you never forget how wonderfully you brighten the world around you.'];
+function wish(i){document.getElementById('compliment').textContent=wishes[i];}
+function confetti(count){const symbols=['✧','✦','♡','·'];for(let i=0;i<count;i++){const el=document.createElement('span');el.className='confetti';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];el.style.left=Math.random()*100+'vw';el.style.animationDuration=(3+Math.random()*3)+'s';el.style.fontSize=(12+Math.random()*15)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),6500)}}
+function tone(freq,duration=1.25){if(!audioCtx)return;const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(0,audioCtx.currentTime);gain.gain.linearRampToValueAtTime(.035,audioCtx.currentTime+.12);gain.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+duration);osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+duration)}
+function startMusic(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC){alert('Your browser does not support background audio.');return}if(!audioCtx)audioCtx=new AC();audioCtx.resume();musicOn=true;document.getElementById('musicBtn').textContent='♫ Music on';document.getElementById('musicBtn').setAttribute('aria-pressed','true');if(musicTimer)clearInterval(musicTimer);tone(notes[noteIndex++%notes.length],1.5);musicTimer=setInterval(()=>tone(notes[noteIndex++%notes.length],1.45),650)}
+function stopMusic(){musicOn=false;if(musicTimer)clearInterval(musicTimer);musicTimer=null;if(audioCtx)audioCtx.suspend();document.getElementById('musicBtn').textContent='♫ Play music';document.getElementById('musicBtn').setAttribute('aria-pressed','false')}
+document.getElementById('musicBtn').addEventListener('click',()=>musicOn?stopMusic():startMusic());
+function sendWhatsApp(){
+  const message=document.getElementById('replyMessage').value.trim();
+  if(!message){document.getElementById('replyMessage').focus();alert('Please type a little message first.');return}
+  const whatsappNumber='919370974515';
+  const url='https://wa.me/'+whatsappNumber+'?text='+encodeURIComponent(message);
+  window.open(url,'_blank','noopener,noreferrer');
+}
+function celebrate(){confetti(65);if(!musicOn)startMusic()}
+</script>
+</body>
+</html>
